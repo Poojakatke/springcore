@@ -1,0 +1,32 @@
+<p-table #myTab [value]="tableData" [scrollable]="true" scrollHeight="600px"
+    [globalFilterFields]="['firstname', 'lastname', 'age']">
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">
+            <i class="pi pi-search" style="margin:4px 4px 0 0">
+            </i>
+            <input type="text" pInputText size="50" placeholder="Global Filter"
+                (input)="myTab.filterGlobal($any($event.target).value, 'contains')" style="width:auto" />
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-people>
+        <tr>
+            <td>
+                {{ people.firstname }}
+            </td>
+            <td>
+                {{ people.lastname }}
+            </td>
+            <td>
+                {{ people.age }}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

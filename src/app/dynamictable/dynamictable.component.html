@@ -1,0 +1,24 @@
+<div class="container-fluid g-0">
+    <app-header (sideNavToggled)="sideNavStatus=$event;"></app-header>
+    <main>
+        <app-side-nav [sideNavStatus]="sideNavStatus" [ngClass]="{'app-side-nav-open':sideNavStatus}" ></app-side-nav>
+       
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink':sideNavStatus}">
+            
+            <p class="fs-1 fw-blod fst-italic">Main Display Area</p>
+        </div>
+    </main>
+</div>
+
+<!-- <table>
+    <thead>
+        <tr >
+            <th *ngFor="let k of tKey">{{k}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of tValue">
+            <td *ngFor="let a of v">{{a}}</td>
+        </tr>
+    </tbody>
+</table> -->
